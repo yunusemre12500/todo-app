@@ -7,14 +7,14 @@
     {
       "matchManagers": ["gomod"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "Go dependencies",
       "automerge": false,
       "labels": ["dependencies"]
     },
     {
       "matchManagers": ["gomod"],
       "matchUpdateTypes": ["major"],
-      "enabled": false
+      "enabled": false,
+      "labels": ["dependencies"]
     }
   ],
   "schedule": [
