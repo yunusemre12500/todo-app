@@ -7,7 +7,7 @@ import (
 	"github.com/yunusemre12500/todo-app/repository"
 )
 
-type UserRepository interface {
+type Repository interface {
 	repository.Repository
 	DeleteUserByID(context.Context, model.ID) error
 	GetUserByID(context.Context, model.ID) (*model.User, error)
