@@ -15,6 +15,14 @@
       "matchUpdateTypes": ["major"],
       "enabled": false,
       "labels": ["dependencies"]
+    },
+    {
+      "matchDepTypes": ["direct", "indirect"],
+      "matchUpdateTypes": ["digest", "pin", "minor", "patch"],
+      "matchPackagePatterns": [".*"],
+      "automerge": true,
+      "labels": ["dependencies", "security"],
+      "groupName": "Security updates"
     }
   ],
   "schedule": [
