@@ -1,32 +1,61 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
-  "enabledManagers": ["gomod"],
+  "enabledManagers": [
+    "gomod"
+  ],
   "packageRules": [
     {
-      "matchManagers": ["gomod"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": false,
-      "labels": ["dependencies"]
+      "labels": [
+        "dependencies"
+      ]
     },
     {
-      "matchManagers": ["gomod"],
-      "matchUpdateTypes": ["major"],
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "enabled": false,
-      "labels": ["dependencies"]
+      "labels": [
+        "dependencies"
+      ]
     },
     {
-      "matchDepTypes": ["direct", "indirect"],
-      "matchUpdateTypes": ["digest", "pin", "minor", "patch"],
-      "matchPackagePatterns": [".*"],
+      "matchDepTypes": [
+        "direct",
+        "indirect"
+      ],
+      "matchUpdateTypes": [
+        "digest",
+        "pin",
+        "minor",
+        "patch"
+      ],
       "automerge": true,
-      "labels": ["dependencies", "security"],
-      "groupName": "Security updates"
+      "labels": [
+        "dependencies",
+        "security"
+      ],
+      "groupName": "Security updates",
+      "matchPackageNames": [
+        "/.*/"
+      ]
     }
   ],
   "schedule": [
-    "before 08:00 and after 18:00"
+    "before 08:00",
+    "after 18:00"
   ],
   "prCreation": "not-pending",
   "commitMessagePrefix": "dependencies",
@@ -37,6 +66,8 @@
     "Please review the changes before merging."
   ],
   "branchName": "renovate/{{depName}}-{{newVersion}}",
-  "labels": ["dependencies"],
-  "recreateClosed": true
+  "labels": [
+    "dependencies"
+  ],
+  "recreateWhen": "always"
 }
