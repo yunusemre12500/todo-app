@@ -1,11 +1,11 @@
-package model
+package dbmodel
 
 import "time"
 
 type Todo struct {
 	Completed bool
 	CreatedAt time.Time
-	ID        ID
-	ListID    ID
+	ID        string
+	ListID    string
 	Text      string
 }
